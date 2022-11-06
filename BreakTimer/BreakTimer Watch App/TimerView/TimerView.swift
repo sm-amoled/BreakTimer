@@ -8,32 +8,45 @@
 import SwiftUI
 
 struct TimerView: View {
+    @StateObject var viewModel = TimerViewModel()
+    
     var body: some View {
         ZStack{
-            VStack(spacing: 4) {
-                // Time
+            VStack(spacing: 8) {
+                // Time Labels
                 Spacer()
                 VStack(spacing: -5) {
-                    Label("01:30", image: "")
+                    Text("\(viewModel.totalTime.convertToTimeFormat())")
                         .font(.system(size: 20))
                         .foregroundColor(.gray)
-                    Label("01:30", image: "")
+                    Text("\(viewModel.leftTime.convertToTimeFormat())")
                         .font(.system(size: 50, weight: .medium))
                 }
                 
-                // StartPauseReset
-                Button("Start") {
-                    print("start")
+                // StartPauseReset Button
+                Button {
+                    viewModel.tapStartPauseResetButton()
+                } label: {
+                    switch viewModel.timerState {
+                    case .idle:
+                        Text("Start")
+                    case .isRunning:
+                        Text("Pause")
+                    case .pause:
+                        Text("Resume")
+                    case .stop:
+                        Text("Reset")
+                    }
                 }
                 .frame(height: 44)
                 
-                // Skip Add
+                // Skip Add Button
                 HStack {
                     Button("Skip") {
-                        print("Skip")
+                        viewModel.tapSkipButton()
                     }
-                    Button("+30") {
-                        print("+30")
+                    Button("+30s") {
+                        viewModel.tapAddButton()
                     }
                 }
             }
