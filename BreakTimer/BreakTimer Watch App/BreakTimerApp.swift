@@ -11,9 +11,9 @@ import SwiftUI
 struct BreakTimer_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationView {
+//            NavigationStack(root: {
                 HomeView()
-            }
+//            })
         }
     }
 }

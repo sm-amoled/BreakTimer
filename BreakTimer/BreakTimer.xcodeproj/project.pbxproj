@@ -16,6 +16,8 @@
 		3427A1D02917E9FF0099EEDB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427A1CF2917E9FF0099EEDB /* HomeView.swift */; };
 		3427A1D22917EA030099EEDB /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427A1D12917EA030099EEDB /* SettingView.swift */; };
 		3427A1DA291803AE0099EEDB /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427A1D9291803AE0099EEDB /* TimerViewModel.swift */; };
+		3427A1DD29180B700099EEDB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427A1DC29180B700099EEDB /* HomeViewModel.swift */; };
+		3427A1E1291811140099EEDB /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427A1E0291811140099EEDB /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		3427A1CF2917E9FF0099EEDB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3427A1D12917EA030099EEDB /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		3427A1D9291803AE0099EEDB /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		3427A1DC29180B700099EEDB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3427A1E0291811140099EEDB /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				3427A1CD2917E9F60099EEDB /* TimerView.swift */,
+				3427A1E0291811140099EEDB /* TestView.swift */,
 				3427A1D9291803AE0099EEDB /* TimerViewModel.swift */,
 			);
 			path = TimerView;
@@ -118,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				3427A1CF2917E9FF0099EEDB /* HomeView.swift */,
+				3427A1DC29180B700099EEDB /* HomeViewModel.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -230,7 +236,9 @@
 			files = (
 				3427A1CE2917E9F60099EEDB /* TimerView.swift in Sources */,
 				3427A1D22917EA030099EEDB /* SettingView.swift in Sources */,
+				3427A1DD29180B700099EEDB /* HomeViewModel.swift in Sources */,
 				3427A1D02917E9FF0099EEDB /* HomeView.swift in Sources */,
+				3427A1E1291811140099EEDB /* TestView.swift in Sources */,
 				3427A1BE2917B8950099EEDB /* ContentView.swift in Sources */,
 				3427A1DA291803AE0099EEDB /* TimerViewModel.swift in Sources */,
 				3427A1BC2917B8950099EEDB /* BreakTimerApp.swift in Sources */,
