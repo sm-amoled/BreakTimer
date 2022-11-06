@@ -25,13 +25,14 @@ struct HomeView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 24, height: 24)
                         .cornerRadius(40)
+                        .foregroundColor(.gray)
                 }
                 .buttonStyle(.borderless)
                 
                 ZStack {
                     // background
                     Circle()
-                        .foregroundColor(.blue)
+                        .foregroundColor(Color("BTDarkRed"))
                     
                     // time gauge
                     Circle()
@@ -67,7 +68,7 @@ struct HomeView: View {
                     NavigationLink(value: Destination.timer) {
                         ZStack{
                             Circle()
-                                .foregroundColor(.red)
+                                .foregroundColor(Color("BTRed"))
                             Text("00:00")
                                 .foregroundColor(.white)
                                 .font(.system(size: 25, weight: .medium))
