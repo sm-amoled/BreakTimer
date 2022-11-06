@@ -8,7 +8,9 @@
 import Foundation
 import SwiftUI
 
-class HomeViewModel {
+class HomeViewModel: ObservableObject {
     @State var isTimerViewShown: Bool = false
     @State var isSettingViewShown: Bool = false
+    
+    
 }

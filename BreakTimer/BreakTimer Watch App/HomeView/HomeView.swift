@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
-    var viewModel = HomeViewModel()
+    @StateObject var viewModel = HomeViewModel()
     @State private var path = NavigationPath()
+    @State var scrollAmount = 0.0
     
     enum Destination: Hashable {
         case setting, timer
@@ -41,7 +42,7 @@ struct HomeView: View {
                             lineWidth: 4
                         )
                     Circle()
-                        .trim(from: 0, to: 0.25)
+                        .trim(from: 0, to: scrollAmount / 30)
                         .stroke(
                             Color.white,
                             // 1
@@ -69,7 +70,7 @@ struct HomeView: View {
                         ZStack{
                             Circle()
                                 .foregroundColor(Color("BTRed"))
-                            Text("00:00")
+                            Text(calcTime().convertToTimeFormat())
                                 .foregroundColor(.white)
                                 .font(.system(size: 25, weight: .medium))
                         }
@@ -86,11 +87,28 @@ struct HomeView: View {
             .navigationDestination(for: Destination.self) {
                 switch $0 {
                 case .timer:
-                    TimerView()
+                    TimerView(totalTime: calcTime())
                 case .setting:
                     SettingView()
                 }
             }
+        }
+//        .digitalCrownRotation($scrollAmount)
+        .focusable(true)
+        .digitalCrownRotation($scrollAmount, from: 0, through: 30, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
+    }
+    
+    func calcTime() -> Int {
+        if scrollAmount < 6 {
+            return Int(scrollAmount) * 10
+        } else if scrollAmount < 12 {
+            return 60 + Int(scrollAmount - 6) * 5
+        } else if scrollAmount < 18 {
+            return 90 + Int(scrollAmount - 12) * 5
+        } else if scrollAmount < 24 {
+            return 120 + Int(scrollAmount - 18) * 10
+        } else {
+            return 180 + Int(scrollAmount - 24) * 20
         }
     }
 }

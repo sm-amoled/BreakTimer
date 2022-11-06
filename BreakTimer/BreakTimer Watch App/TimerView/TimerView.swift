@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct TimerView: View {
-    @StateObject var viewModel = TimerViewModel()
+    
+    var totalTime: Int
+    @StateObject var viewModel: TimerViewModel = TimerViewModel()
+    
+    init(totalTime: Int) {
+        self.totalTime = totalTime
+    }
     
     var body: some View {
         ZStack{
@@ -51,11 +57,15 @@ struct TimerView: View {
                 }
             }
         }
+        .onAppear {
+            viewModel.totalTime = totalTime
+            viewModel.leftTime = totalTime
+        }
     }
 }
 
-struct TimerView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimerView()
-    }
-}
+//struct TimerView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TimerView()
+//    }
+//}

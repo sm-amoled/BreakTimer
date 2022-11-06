@@ -10,11 +10,11 @@ import SwiftUI
 
 class TimerViewModel: ObservableObject {
     
-    @State var totalTime: Int = 90
+    @Published var totalTime: Int = 0
     
     @Published var timerState: TimerState = .idle
     @Published var timer: DispatchSourceTimer?
-    @Published var leftTime: Int = 90
+    @Published var leftTime: Int = 0
     
     func tapStartPauseResetButton() {
         switch timerState {
@@ -53,6 +53,8 @@ extension TimerViewModel {
                 
                 if self.leftTime == 0 {
                     self.timerState = .stop
+                    
+                    
                     
                     self.timer?.cancel()
                     self.timer = nil
