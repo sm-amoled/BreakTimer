@@ -12,6 +12,10 @@
 		3427A1BE2917B8950099EEDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427A1BD2917B8950099EEDB /* ContentView.swift */; };
 		3427A1C02917B8960099EEDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3427A1BF2917B8960099EEDB /* Assets.xcassets */; };
 		3427A1C32917B8960099EEDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3427A1C22917B8960099EEDB /* Preview Assets.xcassets */; };
+		3427A1CE2917E9F60099EEDB /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427A1CD2917E9F60099EEDB /* TimerView.swift */; };
+		3427A1D02917E9FF0099EEDB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427A1CF2917E9FF0099EEDB /* HomeView.swift */; };
+		3427A1D22917EA030099EEDB /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427A1D12917EA030099EEDB /* SettingView.swift */; };
+		3427A1DA291803AE0099EEDB /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427A1D9291803AE0099EEDB /* TimerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		3427A1BD2917B8950099EEDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3427A1BF2917B8960099EEDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3427A1C22917B8960099EEDB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3427A1CD2917E9F60099EEDB /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		3427A1CF2917E9FF0099EEDB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3427A1D12917EA030099EEDB /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		3427A1D9291803AE0099EEDB /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,9 @@
 			children = (
 				3427A1BB2917B8950099EEDB /* BreakTimerApp.swift */,
 				3427A1BD2917B8950099EEDB /* ContentView.swift */,
+				3427A1D52917EA150099EEDB /* HomeView */,
+				3427A1D32917EA080099EEDB /* TimerView */,
+				3427A1D62917EA220099EEDB /* SettingView */,
 				3427A1BF2917B8960099EEDB /* Assets.xcassets */,
 				3427A1C12917B8960099EEDB /* Preview Content */,
 			);
@@ -92,6 +103,31 @@
 				3427A1C22917B8960099EEDB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3427A1D32917EA080099EEDB /* TimerView */ = {
+			isa = PBXGroup;
+			children = (
+				3427A1CD2917E9F60099EEDB /* TimerView.swift */,
+				3427A1D9291803AE0099EEDB /* TimerViewModel.swift */,
+			);
+			path = TimerView;
+			sourceTree = "<group>";
+		};
+		3427A1D52917EA150099EEDB /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				3427A1CF2917E9FF0099EEDB /* HomeView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		3427A1D62917EA220099EEDB /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				3427A1D12917EA030099EEDB /* SettingView.swift */,
+			);
+			path = SettingView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +228,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3427A1CE2917E9F60099EEDB /* TimerView.swift in Sources */,
+				3427A1D22917EA030099EEDB /* SettingView.swift in Sources */,
+				3427A1D02917E9FF0099EEDB /* HomeView.swift in Sources */,
 				3427A1BE2917B8950099EEDB /* ContentView.swift in Sources */,
+				3427A1DA291803AE0099EEDB /* TimerViewModel.swift in Sources */,
 				3427A1BC2917B8950099EEDB /* BreakTimerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
