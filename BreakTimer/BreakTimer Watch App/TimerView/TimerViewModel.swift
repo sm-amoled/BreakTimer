@@ -54,11 +54,14 @@ extension TimerViewModel {
                 if self.leftTime == 0 {
                     self.timerState = .stop
                     
-                    
+                    WKInterfaceDevice.current().play(.notification)
                     
                     self.timer?.cancel()
                     self.timer = nil
+                } else if self.leftTime <= 2 {
+                    WKInterfaceDevice.current().play(.start)
                 }
+                
             })
             self.timer?.resume()
         }

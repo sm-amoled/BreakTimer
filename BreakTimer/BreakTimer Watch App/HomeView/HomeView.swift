@@ -9,8 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
+    
     @State private var path = NavigationPath()
-    @State var scrollAmount = 0.0
+    
+    @State var keyColorName: String = "Red"
+    @State var scrollAmount: Double = 12.0
     
     enum Destination: Hashable {
         case setting, timer
@@ -33,7 +36,7 @@ struct HomeView: View {
                 ZStack {
                     // background
                     Circle()
-                        .foregroundColor(Color("BTDarkRed"))
+                        .foregroundColor(Color("BTDark\(keyColorName)"))
                     
                     // time gauge
                     Circle()
@@ -69,7 +72,7 @@ struct HomeView: View {
                     NavigationLink(value: Destination.timer) {
                         ZStack{
                             Circle()
-                                .foregroundColor(Color("BTRed"))
+                                .foregroundColor(Color("BT\(keyColorName)"))
                             Text(calcTime().convertToTimeFormat())
                                 .foregroundColor(.white)
                                 .font(.system(size: 25, weight: .medium))
@@ -93,19 +96,19 @@ struct HomeView: View {
                 }
             }
         }
-//        .digitalCrownRotation($scrollAmount)
+        //        .digitalCrownRotation($scrollAmount)
         .focusable(true)
         .digitalCrownRotation($scrollAmount, from: 0, through: 30, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
     }
     
     func calcTime() -> Int {
-        if scrollAmount < 6 {
+        if scrollAmount <= 6 {
             return Int(scrollAmount) * 10
-        } else if scrollAmount < 12 {
+        } else if scrollAmount <= 12 {
             return 60 + Int(scrollAmount - 6) * 5
-        } else if scrollAmount < 18 {
+        } else if scrollAmount <= 18 {
             return 90 + Int(scrollAmount - 12) * 5
-        } else if scrollAmount < 24 {
+        } else if scrollAmount <= 24 {
             return 120 + Int(scrollAmount - 18) * 10
         } else {
             return 180 + Int(scrollAmount - 24) * 20
