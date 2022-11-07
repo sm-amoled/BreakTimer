@@ -59,6 +59,7 @@
 		3427A1DC29180B700099EEDB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		3427A1E2291815210099EEDB /* TimerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
 		3427A1E52918174C0099EEDB /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
+		346B37412919246800B0EB85 /* BreakTimer-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "BreakTimer-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +93,7 @@
 		3427A1BA2917B8950099EEDB /* BreakTimer Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				346B37412919246800B0EB85 /* BreakTimer-Watch-App-Info.plist */,
 				3427A1BB2917B8950099EEDB /* BreakTimerApp.swift */,
 				3427A1BD2917B8950099EEDB /* ContentView.swift */,
 				3427A1E42918173A0099EEDB /* Utils */,
@@ -388,6 +390,7 @@
 				DEVELOPMENT_TEAM = JPL38XBHJ4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BreakTimer-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = BreakTimer;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
@@ -418,6 +421,7 @@
 				DEVELOPMENT_TEAM = JPL38XBHJ4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BreakTimer-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = BreakTimer;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;

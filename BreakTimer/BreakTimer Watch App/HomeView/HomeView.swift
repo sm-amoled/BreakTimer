@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
@@ -117,6 +118,11 @@ struct HomeView: View {
             } else {
                 darkColor = Color("BTDarkGray")
                 tintColor = Color("BTGray")
+            }
+        }
+        .onAppear {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert]) { _, _  in
+                
             }
         }
     }
