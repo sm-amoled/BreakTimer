@@ -29,6 +29,16 @@ struct TimerView: View {
                         .font(.system(size: 50, weight: .medium))
                 }
                 
+                // Skip Add Button
+                HStack {
+                    Button("Skip") {
+                        viewModel.tapSkipButton()
+                    }
+                    Button("+30s") {
+                        viewModel.tapAddButton()
+                    }
+                }
+                
                 // StartPauseReset Button
                 Button {
                     viewModel.tapStartPauseResetButton()
@@ -45,16 +55,6 @@ struct TimerView: View {
                     }
                 }
                 .frame(height: 44)
-                
-                // Skip Add Button
-                HStack {
-                    Button("Skip") {
-                        viewModel.tapSkipButton()
-                    }
-                    Button("+30s") {
-                        viewModel.tapAddButton()
-                    }
-                }
             }
         }
         .onAppear {

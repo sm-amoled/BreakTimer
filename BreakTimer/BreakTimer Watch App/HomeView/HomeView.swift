@@ -15,6 +15,9 @@ struct HomeView: View {
     @State var keyColorName: String = "Red"
     @State var scrollAmount: Double = 12.0
     
+    @State var darkColor: Color = Color("BTDarkRed")
+    @State var tintColor: Color = Color("BTRed")
+    
     enum Destination: Hashable {
         case setting, timer
     }
@@ -36,7 +39,7 @@ struct HomeView: View {
                 ZStack {
                     // background
                     Circle()
-                        .foregroundColor(Color("BTDark\(keyColorName)"))
+                        .foregroundColor(darkColor)
                     
                     // time gauge
                     Circle()
@@ -72,8 +75,8 @@ struct HomeView: View {
                     NavigationLink(value: Destination.timer) {
                         ZStack{
                             Circle()
-                                .foregroundColor(Color("BT\(keyColorName)"))
-                            Text(calcTime().convertToTimeFormat())
+                                .foregroundColor(tintColor)
+                            Text(crownAmountToSeconds().convertToTimeFormat())
                                 .foregroundColor(.white)
                                 .font(.system(size: 25, weight: .medium))
                         }
@@ -90,18 +93,35 @@ struct HomeView: View {
             .navigationDestination(for: Destination.self) {
                 switch $0 {
                 case .timer:
-                    TimerView(totalTime: calcTime())
+                    TimerView(totalTime: crownAmountToSeconds())
                 case .setting:
                     SettingView()
                 }
             }
         }
-        //        .digitalCrownRotation($scrollAmount)
         .focusable(true)
         .digitalCrownRotation($scrollAmount, from: 0, through: 30, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
+        .onChange(of: scrollAmount) { scrollAmount in
+            if scrollAmount < 7 {
+                darkColor = Color("BTDarkYellow")
+                tintColor = Color("BTYellow")
+            } else if scrollAmount < 13 {
+                darkColor = Color("BTDarkRed")
+                tintColor = Color("BTRed")
+            } else if scrollAmount < 19 {
+                darkColor = Color("BTDarkGreen")
+                tintColor = Color("BTGreen")
+            } else if scrollAmount < 25 {
+                darkColor = Color("BTDarkBlue")
+                tintColor = Color("BTBlue")
+            } else {
+                darkColor = Color("BTDarkGray")
+                tintColor = Color("BTGray")
+            }
+        }
     }
     
-    func calcTime() -> Int {
+    func crownAmountToSeconds() -> Int {
         if scrollAmount <= 6 {
             return Int(scrollAmount) * 10
         } else if scrollAmount <= 12 {
