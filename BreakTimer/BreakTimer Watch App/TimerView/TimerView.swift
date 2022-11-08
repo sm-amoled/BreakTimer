@@ -115,7 +115,7 @@ func setOneTimeNotification(timeFor: Double) {
     let content = UNMutableNotificationContent()
     content.title = "쉬는 시간 완료!"
     content.subtitle = "다음 세트를 준비해주세요"
-    
+    content.sound = UNNotificationSound.default
     if timeFor <= 1 { return }
     
     let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(timeFor), repeats: false)
