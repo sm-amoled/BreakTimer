@@ -101,7 +101,7 @@ struct HomeView: View {
             }
         }
         .focusable(true)
-        .digitalCrownRotation($scrollAmount, from: 0, through: 30, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
+        .digitalCrownRotation($scrollAmount, from: 1, through: 30, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
         .onChange(of: scrollAmount) { scrollAmount in
             if scrollAmount < 7 {
                 darkColor = Color("BTDarkYellow")
@@ -127,17 +127,17 @@ struct HomeView: View {
         }
     }
     
-    func crownAmountToSeconds() -> Int {
+    func crownAmountToSeconds() -> Double {
         if scrollAmount <= 6 {
-            return Int(scrollAmount) * 10
+            return (scrollAmount) * 10
         } else if scrollAmount <= 12 {
-            return 60 + Int(scrollAmount - 6) * 5
+            return 60 + (scrollAmount - 6) * 5
         } else if scrollAmount <= 18 {
-            return 90 + Int(scrollAmount - 12) * 5
+            return 90 + (scrollAmount - 12) * 5
         } else if scrollAmount <= 24 {
-            return 120 + Int(scrollAmount - 18) * 10
+            return 120 + (scrollAmount - 18) * 10
         } else {
-            return 180 + Int(scrollAmount - 24) * 20
+            return 180 + (scrollAmount - 24) * 20
         }
     }
 }
